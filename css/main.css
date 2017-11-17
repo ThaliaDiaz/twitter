@@ -1,0 +1,119 @@
+*{
+    font-family: Courier New, Courier, monospace;
+    margin:0;
+}
+
+nav{
+    background-color: #1da1f2;
+    width: 100%;
+    height: 20%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: center;
+    font-size: 50px;
+    color: white;
+}
+h2{
+    margin-top: 20px;
+    margin-left: 15px;
+}
+h3{
+   color: #1da1f2;
+   margin-top: 10px;
+   font-size: 25px;
+   margin-left: 15px;
+}
+hr{
+    margin-top: 20px;
+}
+.container{
+    /*background-image: url(../assets/images/portada.jpg);*/
+    background-color: skyblue;
+    background-repeat: no-repeat;
+    width:100%;
+    height:700px;
+    background-size: cover;
+    position: fixed;
+}
+
+ section.first{
+    background-color: white;
+    width: 40%;
+    height: 200px;
+    margin-left: 120px;
+    margin-top: 10px;
+    margin-right: 30px;
+    display: inline-block;
+}
+
+section.second{
+    background-color: white;
+    width: 40%;
+    height: 170px;
+    margin-top: 40px;  
+    display: inline-block;
+}
+
+p{
+    line-height: 2;
+    margin-left: 15px;
+}
+
+button{
+    background-color: #1da1f2;
+    border-radius: 6px;
+    color: white;
+    font-weight: 500px;
+    width:90px;
+    height:40px ;
+    margin-top: 20px;
+    margin-left: 15px;
+    margin-right: 55%;
+    border: 1px solid transparent;
+    display: inline-block;
+}
+
+form{
+    margin-left: 15px;
+}
+
+/*
+button{
+    background-color: #b8c2c7;
+    border-radius: 6px;
+    color: white;
+    font-weight: 500px;
+    width:90px;
+    height:40px ;
+    margin-top: 20px;
+    margin-left: 15px;
+    margin-right: 55%;
+    border: 1px solid transparent;
+    display: inline-block;
+}*/
+
+.second textarea{
+    display: inline-block;
+    margin-top: 10px;
+    height: 60px;
+    width: 85%;
+    resize: auto;
+    font-size: 20px;
+    border: none;
+}
+
+.second input{
+    border: none;
+    color: #1da1f2;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.third{
+    background-color: white;
+    margin-top: 40px;
+    margin-left: 120px;
+    height: 70px;
+    width: 83%;
+}
+
