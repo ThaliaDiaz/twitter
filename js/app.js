@@ -9,10 +9,9 @@ window.addEventListener('load', function(event) {
 
   /* evento para contar mi mensaje(tweet) ingresado*/ 
   mensaje.addEventListener('keyup', contador);
-  function contador() {
+  function contador(event) {
     var lengthText = 140 - (mensaje.value.length);
     contar.textContent = lengthText;
-
     if (mensaje.value.length > 120 && mensaje.value.length <= 130) {
       contar.classList.remove('span-start');
       contar.classList.add('red');
