@@ -40,21 +40,19 @@ window.addEventListener('load', function(event) {
     }
   });
 
-  /* función desactivar el boton
+  /* función desactivar el boton si está vacío el textarea */
   function validButtom() {
-    if (mensaje.value === '' || mensaje.value.length > 140) {
+    if (mensaje.value === ' ' || isNaN(mensaje.value) !== true) {
       boton.disabled = true;
+      boton.classList.remove('estado-act');
       boton.classList.add('estado-des');
-    // linea.classList.add('linea-gris');
     } else {
       boton.disabled = false;
       boton.classList.remove('estado-des');
-      // linea.classList.remove('linea-gris');
       boton.classList.add('estado-act');
-      // linea.classList.add('linea-celeste');
     }
   }
-  mensaje.addEventListener('keyup', validButtom);*/
+  mensaje.addEventListener('keyup', validButtom);
 });
 
 

@@ -95,6 +95,34 @@ form{
 }
 
 button{
+    background-color: #b8c2c7;
+    border-radius: 6px;
+    color: white;
+    font-weight: 500px;
+    width:90px;
+    height:40px ;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 15px;
+    margin-right: 55%;
+    border: 1px solid transparent;
+    display: inline-block;
+}
+.estado-des{
+    background-color: #b8c2c7;
+    border-radius: 6px;
+    color: white;
+    font-weight: 500px;
+    width:90px;
+    height:40px ;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 15px;
+    margin-right: 55%;
+    border: 1px solid transparent;
+    display: inline-block;
+}
+.estado-act {
     background-color: #1da1f2;
     border-radius: 6px;
     color: white;
@@ -108,8 +136,12 @@ button{
     border: 1px solid transparent;
     display: inline-block;
 }
-
-
+.estado-act:focus{
+ background-color: #b8c2c7;
+}
+.estado-des:focus{
+    background-color: #b8c2c7;
+   }
 .span-start{
     color: #1da1f2;
     font-size: 25px;
