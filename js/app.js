@@ -26,9 +26,8 @@ window.addEventListener('load', function(event) {
     }
   }
 
-  /* redimensionando textarea*/
+  /* redimensionando textarea para que crezca de acuerdo al tamaño de mi texto o a los enter presionados*/
   mensaje.addEventListener('keydown', autosize);
-      
   function autosize() {
     var areaText = this;
     setTimeout(function() {
