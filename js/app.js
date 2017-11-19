@@ -12,6 +12,18 @@ window.addEventListener('load', function(event) {
   function contador() {
     var lengthText = 140 - (mensaje.value.length);
     contar.textContent = lengthText;
+
+    if (mensaje.value.length > 120 && mensaje.value.length <= 130) {
+      contar.classList.remove('span-start');
+      contar.classList.add('red');
+    } else if (mensaje.value.length > 130 && mensaje.value.length <= 140) {
+      contar.classList.remove('red');
+      contar.classList.add('green');
+    } else {
+      contar.classList.remove('green');
+      contar.classList.remove('red');
+      contar.classList.add('span-start');
+    }
   }
 
   /* redimensionando textarea*/
@@ -42,7 +54,7 @@ window.addEventListener('load', function(event) {
 
   /* función desactivar el boton si está vacío el textarea */
   function validButtom() {
-    if (mensaje.value === ' ' || isNaN(mensaje.value) !== true) {
+    if (mensaje.value === ' ' || isNaN(mensaje.value) !== true || mensaje.value.length > 140) {
       boton.disabled = true;
       boton.classList.remove('estado-act');
       boton.classList.add('estado-des');
