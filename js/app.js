@@ -5,17 +5,18 @@ window.addEventListener('load', function(event) {
   var tweets = document.getElementById('mis-tweets');
   var linea = document.getElementById('linea');
   var contar = document.getElementById('characters');
+  var MAXCHARACTERS = 140;
   
 
   /* evento para contar mi mensaje(tweet) ingresado*/ 
-  mensaje.addEventListener('keydown', contador);
+  mensaje.addEventListener('keyup', contador);
   function contador(event) {
-    var lengthText = 140 - (mensaje.value.length);
+    var lengthText = MAXCHARACTERS - (mensaje.value.length);
     contar.textContent = lengthText;
     if (mensaje.value.length > 120 && mensaje.value.length <= 130) {
       contar.classList.remove('span-start');
       contar.classList.add('red');
-    } else if (mensaje.value.length > 130 && mensaje.value.length <= 140) {
+    } else if (mensaje.value.length > 130 && mensaje.value.length <= MAXCHARACTERS) {
       contar.classList.remove('red');
       contar.classList.add('green');
     } else {
@@ -37,31 +38,21 @@ window.addEventListener('load', function(event) {
   /* Evento que crea mi una nueva sección donde muestro mi tweet*/ 
   boton.addEventListener('click', function(event) {
     event.preventDefault();
-    // atrapa la hora actual 
-    var fecha = new Date();
-    var hora = fecha.getHours();
-    var minuto = fecha.getMinutes();
-    if (minuto < 10) {
-      minuto = '0' + minuto;
-    }
-    if (hora < 10) {
-      hora = '0' + hora;
-    }
-    var hoursPublication = '\n' + 'Publicado a las ' + hora + ':' + minuto + ' horas';
-
+    var hoursPublication = 'Publicado a las ' + moment().format('LT');
     if (mensaje.value) {
       var div = document.createElement('div');
       var parrafo = document.createElement('p');
-      parrafo.innerHTML = mensaje.value + hoursPublication;
       parrafo.classList.add('div-tweet');
       tweets.appendChild(div);
       div.appendChild(parrafo);
+      parrafo.innerHTML = mensaje.value + '<br>' + hoursPublication ;
+      tweets.insertBefore(div, tweets.firstChild);
       mensaje.value = '';
     }
   });
 
   /* función desactivar el boton si está vacío el textarea */
-  function validButtom() {
+  function validButtom(event) {
     if (mensaje.value === ' ' || isNaN(mensaje.value) !== true || mensaje.value.length > 140) {
       boton.disabled = true;
       boton.classList.remove('estado-act');
