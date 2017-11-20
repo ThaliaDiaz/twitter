@@ -33,11 +33,6 @@ window.addEventListener('load', function(event) {
       areaText.style.cssText = 'height:auto; padding:0';
       areaText.style.cssText = 'height:' + areaText.scrollHeight + 'px';
     }, 0);
-
-    if (event.keyCode === 13) {
-      // para darle el tamaño del scroll a la altura del textarea
-      mensaje.value= '\n';
-    }
   }
   /* Evento que crea mi una nueva sección donde muestro mi tweet*/ 
   boton.addEventListener('click', function(event) {
