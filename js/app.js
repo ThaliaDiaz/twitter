@@ -8,7 +8,7 @@ window.addEventListener('load', function(event) {
   
 
   /* evento para contar mi mensaje(tweet) ingresado*/ 
-  mensaje.addEventListener('keyup', contador);
+  mensaje.addEventListener('keydown', contador);
   function contador(event) {
     var lengthText = 140 - (mensaje.value.length);
     contar.textContent = lengthText;
