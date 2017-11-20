@@ -38,11 +38,21 @@ window.addEventListener('load', function(event) {
   boton.addEventListener('click', function(event) {
     event.preventDefault();
     // atrapa la hora actual 
-    var hora = new Date();
+    var fecha = new Date();
+    var hora = fecha.getHours();
+    var minuto = fecha.getMinutes();
+    if (minuto < 10) {
+      minuto = '0' + minuto;
+    }
+    if (hora < 10) {
+      hora = '0' + hora;
+    }
+    var hoursPublication = '\n' + 'Publicado a las ' + hora + ':' + minuto + ' horas';
+
     if (mensaje.value) {
       var div = document.createElement('div');
       var parrafo = document.createElement('p');
-      parrafo.innerHTML = mensaje.value + '\n' + hora;
+      parrafo.innerHTML = mensaje.value + hoursPublication;
       parrafo.classList.add('div-tweet');
       tweets.appendChild(div);
       div.appendChild(parrafo);
